@@ -1,13 +1,16 @@
 def afficher_menu() :
-    """fonction d'affichage de menu
-
+    """
+    fonction d'affichage de menu
     """
     text = "Menu Principal  \n " 
     text += "(1) : ajouter un personnage  \n " 
     text += "(2) : voir la liste de personnage actuellement dans l'arène \n " 
     text += "(3) : faire combattre deux personnages \n " 
-    text += "(4) : afficher historique combats \n"
-    text += " (5) : quitter le programme"
+    text += "(4) : afficher historique combats \n "
+    text += "(5) : soigner un personnage \n "
+    text += "(6) : nettoyer l'arène \n "
+    text += "(7) : commencer le battle royale \n "
+    text += "(8) : quitter le programme"
     print(text)
 
 def information_personnage(type : int) :
@@ -34,6 +37,9 @@ def information_personnage(type : int) :
         case 3 : 
             dexterite = int(input("quelle est le montant total de votre dexterite (40-70) ? "))
             return nom,pv,attaquer,dexterite
+        
+        case _ : 
+            return nom,pv,attaquer
         
         
 

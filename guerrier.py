@@ -1,10 +1,11 @@
 from personnage import Personnage
+from armure import Armure
 import random
 
 class Guerrier(Personnage) : 
 
-    def __init__(self, nom : str, pv : int,attaque : int, force : int) : 
-        super().__init__(nom, pv, attaque)
+    def __init__(self, nom : str, pv : int,attaque : int, force : int, armure : Armure) : 
+        super().__init__(nom, pv, attaque, armure)
 
         #creations des attributs
         self._force = 0

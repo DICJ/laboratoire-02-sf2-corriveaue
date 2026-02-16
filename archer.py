@@ -1,10 +1,11 @@
 from personnage import Personnage 
+from armure import Armure
 import random
 
 class Archer(Personnage) :
 
-    def __init__(self, nom : int, pv : int, attaque : int, dexterite : int):
-        super().__init__(nom, pv, attaque)
+    def __init__(self, nom : int, pv : int, attaque : int, dexterite : int, armure : Armure):
+        super().__init__(nom, pv, attaque, armure) 
 
         #creation des attributs 
         self._dexterite = 0
@@ -33,11 +34,10 @@ class Archer(Personnage) :
         """
         nombre_test = random.randint(0,100)
         if self.dexterite >= nombre_test : 
-            degats = (2*(self.attaque + 15 ))
+            return (2*(self.attaque + 15 ))
         else :  
-            degats = self.attaque +15
+            return self.attaque +15
             
-        return degats
     
     def __str__(self):
         return f"archer du nom de : {self.nom}, avec {self.pv} pv, {self.attaque} pts d'attaques et {self.dexterite} pts de dextérité "
